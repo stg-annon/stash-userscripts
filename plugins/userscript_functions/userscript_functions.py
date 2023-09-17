@@ -1,16 +1,16 @@
 import config_manager
 import json
-import log
 import os
 import pathlib
 import sys
 import subprocess
 from favorite_performers_sync import set_stashbox_favorite_performers, set_stashbox_favorite_performer
-from studiodownloader import update_studio_from_stashbox
 from audit_performer_urls import audit_performer_urls
 try:
-    from stashlib.stash_database import StashDatabase
-    from stashlib.stash_interface import StashInterface
+    import stashapi.log as log
+    log.LEVEL = log.StashLogLevel.INFO
+    from stashapi.stashapp import StashInterface
+    from stashapi.stashbox import StashBoxInterface
 except ModuleNotFoundError:
     print("If you have pip (normally installed with python), run this command in a terminal (cmd): pip install pystashlib)", file=sys.stderr)
     sys.exit()
@@ -18,42 +18,55 @@ except ModuleNotFoundError:
 json_input = json.loads(sys.stdin.read())
 name = json_input['args']['name']
 
-configpath = os.path.join(pathlib.Path(__file__).parent.resolve(), 'config.ini')
+log.info(json_input['args']['endpoint'])
 
-def get_database_path():
-    client = StashInterface(json_input["server_connection"])
-    result = client.callGraphQL("""query Configuration { configuration { general { databasePath } } }""")
-    database_path = result["configuration"]["general"]["databasePath"]
-    log.debug(f"databasePath: {database_path}")
-    return database_path
+stash = StashInterface(json_input["server_connection"])
+sbox = StashBoxInterface(stash.get_stashbox_connection("stashdb.org"))
 
-if name == 'explorer':
+CONFIG_PATH = os.path.join(pathlib.Path(__file__).parent.resolve(), 'config.ini')
+
+def main():
+    if name == 'update_config_value':
+        update_config_value()
+    if name == 'get_config_value':
+        get_config_value()
+
+    if name == 'explorer':
+        open_explorer()
+    if name == 'mediaplayer':
+        open_mediaplayer()
+    if name == 'audit_performer_urls':
+        audit_performer_urls(stash)
+    if name == 'favorite_performers_sync':
+        set_stashbox_favorite_performers(stash, sbox)
+    if name == 'favorite_performer_sync':
+        favorite_performer_sync()
+        
+    if name == 'update_studio':
+        log.warning("update_studio id deprecated, use Studio Tagger")
+
+    print(json.dumps({"output":"ok"}) + "\n")
+
+def open_explorer():
     path = json_input['args']['path']
     log.debug(f"{name}: {path}")
     subprocess.Popen(f'explorer "{path}"')
-elif name == 'mediaplayer':
-    mediaplayer_path = config_manager.get_config_value(configpath, 'MEDIAPLAYER', 'path')
+
+def open_mediaplayer():
+    mediaplayer_path = config_manager.get_config_value(CONFIG_PATH, 'MEDIAPLAYER', 'path')
     path = json_input['args']['path']
     log.debug(f"mediaplayer_path: {mediaplayer_path}")
     log.debug(f"{name}: {path}")
     subprocess.Popen([mediaplayer_path, path])
-elif name == 'update_studio':
-    studio_id = json_input['args']['studio_id']
-    endpoint = json_input['args']['endpoint']
-    remote_site_id = json_input['args']['remote_site_id']
-    log.debug(f"{name}: {studio_id} {endpoint} {remote_site_id}")
-    update_studio_from_stashbox(studio_id, endpoint, remote_site_id)
-    log.debug(f"{name}: Done.")
-elif name == 'audit_performer_urls':
-    try:
-        db = StashDatabase(get_database_path())
-    except Exception as e:
-        log.error(str(e))
-        sys.exit(0)
-    audit_performer_urls(db)
-    db.close()
-elif name == 'update_config_value':
-    log.debug(f"configpath: {configpath}")
+
+def favorite_performer_sync():
+    stash_id = json_input['args']['stash_id']
+    favorite = json_input['args']['favorite']
+    log.debug(f"Favorite performer sync: endpoint={sbox.endpoint}, stash_id={stash_id}, favorite={favorite}")
+    set_stashbox_favorite_performer(sbox, stash_id, favorite)
+
+def update_config_value():
+    log.debug(f"config path: {CONFIG_PATH}")
     section_key = json_input['args']['section_key']
     prop_name = json_input['args']['prop_name']
     value = json_input['args']['value']
@@ -61,28 +74,17 @@ elif name == 'update_config_value':
         log.error(f"{name}: Missing args")
         sys.exit(0)
     log.debug(f"{name}: [{section_key}][{prop_name}] = {value}")
-    config_manager.update_config_value(configpath, section_key, prop_name, value)
-elif name == 'get_config_value':
-    log.debug(f"configpath: {configpath}")
+    config_manager.update_config_value(CONFIG_PATH, section_key, prop_name, value)
+
+def get_config_value():
+    log.debug(f"config path: {CONFIG_PATH}")
     section_key = json_input['args']['section_key']
     prop_name = json_input['args']['prop_name']
     if not section_key or not prop_name:
         log.error(f"{name}: Missing args")
         sys.exit(0)
-    value = config_manager.get_config_value(configpath, section_key, prop_name)
+    value = config_manager.get_config_value(CONFIG_PATH, section_key, prop_name)
     log.debug(f"{name}: [{section_key}][{prop_name}] = {value}")
-elif name == 'favorite_performers_sync':
-    endpoint = json_input['args']['endpoint']
-    try:
-        db = StashDatabase(get_database_path())
-    except Exception as e:
-        log.error(str(e))
-        sys.exit(0)
-    set_stashbox_favorite_performers(db, endpoint)
-    db.close()
-elif name == 'favorite_performer_sync':
-    endpoint = json_input['args']['endpoint']
-    stash_id = json_input['args']['stash_id']
-    favorite = json_input['args']['favorite']
-    log.debug(f"Favorite performer sync: endpoint={endpoint}, stash_id={stash_id}, favorite={favorite}")
-    set_stashbox_favorite_performer(endpoint, stash_id, favorite)
+
+if __name__ == '__main__':
+    main()
