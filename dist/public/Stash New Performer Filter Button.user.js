@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        Stash New Performer Filter Button
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Adds a button to the performers page to switch to a new performers filter
 // @version     0.3.0
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @grant       unsafeWindow
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/master/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function () {

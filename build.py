@@ -47,7 +47,7 @@ def build():
 // @namespace     {config.NAMESPACE}
 // @description Stash Userscripts Development Bundle
 // @version     {config.BUNDLE_VERSION}
-// @author      7dJx1qP
+// @author      7dJx1qP, stg-annon
 // @match       {config.SERVER_URL}/*
 // @resource    IMPORTED_CSS https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.css
 // @grant       unsafeWindow
@@ -59,7 +59,7 @@ def build():
 // @require     https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.js
 // @require     https://raw.githubusercontent.com/nodeca/js-yaml/master/dist/js-yaml.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.2/marked.min.js
-// @require     {locallibfile}
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 //
 // **************************************************************************************************
 // *            YOU MAY REMOVE ANY OF THE @require LINES BELOW FOR SCRIPTS YOU DO NOT WANT          *
@@ -77,7 +77,7 @@ def build():
 // @namespace     {config.NAMESPACE}
 // @description Stash Userscripts Bundle
 // @version     {config.BUNDLE_VERSION}
-// @author      7dJx1qP
+// @author      7dJx1qP, stg-annon
 // @match       {config.SERVER_URL}/*
 // @resource    IMPORTED_CSS https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.css
 // @grant       unsafeWindow
@@ -89,7 +89,7 @@ def build():
 // @require     https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.js
 // @require     https://raw.githubusercontent.com/nodeca/js-yaml/master/dist/js-yaml.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.2/marked.min.js
-// @require     {distlibfile}
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 //
 // **************************************************************************************************
 // *            YOU MAY REMOVE ANY OF THE @require LINES BELOW FOR SCRIPTS YOU DO NOT WANT          *

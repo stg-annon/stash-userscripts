@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        Stash Performer URL Searchbox
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Adds a search by performer url textbox to the performers page
 // @version     0.2.0
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @grant       unsafeWindow
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/master/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function () {

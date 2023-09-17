@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        Stash StashID Input
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Adds input for entering new stash id to performer details page and studio page
 // @version     0.4.0
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @grant       unsafeWindow
 // @grant       GM_setClipboard
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/master/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function () {
@@ -196,15 +196,22 @@ fragment StudioData on Studio {
     }
 
     stash.addEventListener('page:performer:details', function () {
-        waitForElementId('performer-details-tabpane-details', async function (elementId, el) {
+        waitForElementId('performer-page', async function (elementId, el) {
             if (!document.getElementById('update-stashids-endpoint')) {
-                const detailsList = el.querySelector('.details-list');
-                const stashboxInputContainer = document.createElement('dt');
+                const performerHead = el.querySelector('.performer-head');
+                
+                const stashIdInputCol = document.createElement('div')
+                stashIdInputCol.classList.add('col');
+                
+                const stashboxInputContainer = document.createElement('div')
+                stashboxInputContainer.classList.add('row', 'row-cols-8');
+                
                 const stashboxInput = document.createElement('select');
                 stashboxInput.setAttribute('id', 'update-stashids-endpoint');
-                stashboxInput.classList.add('form-control', 'input-control');
-                stashboxInputContainer.appendChild(stashboxInput);
-                detailsList.appendChild(stashboxInputContainer);
+                stashboxInput.classList.add('col-2','form-control', 'input-control');
+
+                stashIdInputCol.appendChild(stashboxInputContainer)
+                performerHead.appendChild(stashIdInputCol);
 
                 const data = await stash.getStashBoxes();
                 let i = 0;
@@ -218,9 +225,8 @@ fragment StudioData on Studio {
 
                 const performerId = window.location.pathname.replace('/performers/', '');
 
-                const stashIdInputContainer = document.createElement('dd');
                 const stashIdInput = document.createElement('input');
-                stashIdInput.classList.add('query-text-field', 'bg-secondary', 'text-white', 'border-secondary', 'form-control');
+                stashIdInput.classList.add('col-4','query-text-field', 'bg-secondary', 'text-white', 'border-secondary', 'form-control');
                 stashIdInput.setAttribute('id', 'update-stashids');
                 stashIdInput.setAttribute('placeholder', 'Add StashID…');
                 stashIdInput.addEventListener('change', () => {
@@ -253,8 +259,8 @@ fragment StudioData on Studio {
                         return updatePerformerStashIDs(performerId, stash_ids.concat([{ endpoint: newEndpoint, stash_id: newStashId }]));
                     }).then(() => window.location.reload());
                 });
-                stashIdInputContainer.appendChild(stashIdInput);
-                detailsList.appendChild(stashIdInputContainer);
+                stashboxInputContainer.appendChild(stashIdInput);
+                stashboxInputContainer.appendChild(stashboxInput);
 
                 const copyTooltip = createTooltipElement();
 
@@ -274,16 +280,22 @@ fragment StudioData on Studio {
     });
 
     stash.addEventListener('page:studio:scenes', function () {
-        waitForElementByXpath("//div[contains(@class, 'studio-details')]", async function (xpath, el) {
+        waitForElementId('studio-page', async function (elementId, el) {
             if (!document.getElementById('studio-stashids')) {
+                const studioHead = el.querySelector('.studio-head');
+
+                const stashIdInputCol = document.createElement('div')
+                stashIdInputCol.classList.add('col');
+
                 const container = document.createElement('div');
                 container.setAttribute('id', 'studio-stashids');
-                container.classList.add('row', 'pl-3');
-                el.appendChild(container);
+                container.classList.add('row', 'row-cols-8');
+                studioHead.appendChild(stashIdInputCol);
+                stashIdInputCol.appendChild(container)
 
                 const stashboxInput = document.createElement('select');
                 stashboxInput.setAttribute('id', 'update-stashids-endpoint');
-                stashboxInput.classList.add('form-control', 'input-control', 'mt-2', 'col-md-4');
+                stashboxInput.classList.add('col-2','form-control', 'input-control', 'mt-2', 'col-md-4');
 
                 const data = await stash.getStashBoxes();
                 let i = 0;
@@ -298,7 +310,7 @@ fragment StudioData on Studio {
                 const studioId = window.location.pathname.replace('/studios/', '');
 
                 const stashIdInput = document.createElement('input');
-                stashIdInput.classList.add('query-text-field', 'bg-secondary', 'text-white', 'border-secondary', 'form-control', 'mt-2', 'col-md-8');
+                stashIdInput.classList.add('col-4','query-text-field', 'bg-secondary', 'text-white', 'border-secondary', 'form-control', 'mt-2', 'col-md-8');
                 stashIdInput.setAttribute('id', 'update-stashids');
                 stashIdInput.setAttribute('placeholder', 'Add StashID…');
                 stashIdInput.addEventListener('change', () => {

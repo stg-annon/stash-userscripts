@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Stash Scene Tagger Linkify
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Turn all scene tagger result text referencing stash or stashbox studio and performer names into clickable links
 // @version     0.3.1
 // @author      7dJx1qP
@@ -8,7 +8,7 @@
 // @grant       unsafeWindow
 // @grant       GM.getValue
 // @grant       GM.setValue
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/master/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/use-stashapi/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function () {
