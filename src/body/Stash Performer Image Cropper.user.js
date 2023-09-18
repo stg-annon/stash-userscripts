@@ -24,22 +24,41 @@
             const cropBtnContainerId = "crop-btn-container";
             if (!document.getElementById(cropBtnContainerId)) {
                 const performerId = window.location.pathname.replace('/performers/', '').split('/')[0];
-                const image = getElementByXpath("//div[contains(@class, 'detail-header-image')]//img[@class='performer']");
-                image.parentElement.addEventListener('click', (evt) => {
-                    if (cropping) {
-                        evt.preventDefault();
-                        evt.stopPropagation();
-                    }
-                })
-                const cropBtnContainer = document.createElement('div');
+                const performerImage = getElementByXpath("//div[contains(@class, 'detail-header-image')]//img[@class='performer']");
+
+                var cropperModal = document.createElement("dialog");
+                cropperModal.style.width = "90%"
+                cropperModal.style.border = "none"
+                cropperModal.classList.add('bg-dark')
+                document.body.appendChild(cropperModal)
+
+                var cropperContainer = document.createElement("div")
+                cropperContainer.style.width = "100%"
+                cropperContainer.style.height = "auto"
+                cropperContainer.style.margin = "auto"
+                cropperModal.appendChild(cropperContainer)
+
+                var image = performerImage.cloneNode()
+                image.style.display = "block"
+                image.style.maxWidth = "100%"
+                cropperContainer.appendChild(image)
+                
+                var cropBtnContainer = document.createElement('div');
                 cropBtnContainer.setAttribute("id", cropBtnContainerId);
-                cropBtnContainer.style.marginLeft = '10px';
-                image.parentElement.parentElement.appendChild(cropBtnContainer);
-                image.parentElement.parentElement.style.flexFlow = 'column';
+                cropBtnContainer.classList.add('d-flex','flex-row','justify-content-center','align-items-center')
+                cropBtnContainer.style.gap = "10px"
+                cropperModal.appendChild(cropBtnContainer)
+
+                const startCropContainer = document.createElement('div')
+                startCropContainer.classList.add('d-flex','flex-column','justify-content-between','align-items-center')
+                
+                performerImage.parentElement.parentElement.appendChild(startCropContainer);
+                performerImage.parentElement.parentElement.style.flexFlow = 'column';
 
                 const cropInfo = document.createElement('p');
+                cropInfo.style.all = "revert"
+                cropInfo.classList.add('text-white')
 
-                const imageUrl = getElementByXpath("//div[contains(@class, 'detail-header-image')]//img[@class='performer']/@src").nodeValue;
                 const cropStart = document.createElement('button');
                 cropStart.setAttribute("id", "crop-start");
                 cropStart.classList.add('btn', 'btn-primary');
@@ -65,8 +84,9 @@
                             cropInfo.innerText = `X: ${Math.round(e.detail.x)}, Y: ${Math.round(e.detail.y)}, Width: ${Math.round(e.detail.width)}px, Height: ${Math.round(e.detail.height)}px`;
                         }
                     });
-                });
-                cropBtnContainer.appendChild(cropStart);
+                    cropperModal.showModal();
+                })
+                startCropContainer.appendChild(cropStart);
                 
                 const cropAccept = document.createElement('button');
                 cropAccept.setAttribute("id", "crop-accept");
@@ -96,6 +116,7 @@
                     await stash.callGQL(reqData);
                     reloadImg(image.src);
                     cropper.destroy();
+                    cropperModal.close("cropAccept")
                 });
                 cropBtnContainer.appendChild(cropAccept);
                 
@@ -111,6 +132,7 @@
                     cropInfo.innerText = '';
     
                     cropper.destroy();
+                    cropperModal.close("cropCancel")
                 });
                 cropBtnContainer.appendChild(cropCancel);
                 cropAccept.style.display = 'none';

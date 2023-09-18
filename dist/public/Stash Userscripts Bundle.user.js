@@ -2,7 +2,7 @@
 // @name        Stash Userscripts Bundle
 // @namespace     https://github.com/stg-annon/stash-userscripts
 // @description Stash Userscripts Bundle
-// @version     0.21.2
+// @version     0.21.3
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @resource    IMPORTED_CSS https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.css
