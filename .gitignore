@@ -1,3 +1,4 @@
 dist/local
 __pycache__
 stash-userscripts.code-workspace
+.vscode/settings.json
