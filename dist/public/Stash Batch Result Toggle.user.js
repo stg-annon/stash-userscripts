@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Stash Batch Result Toggle
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Batch toggle scene tagger search result fields
 // @version     0.4.1
 // @author      7dJx1qP
@@ -8,7 +8,7 @@
 // @grant       unsafeWindow
 // @grant       GM.getValue
 // @grant       GM.setValue
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function() {

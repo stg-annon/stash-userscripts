@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        Stash StashID Icon
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Adds checkmark icon to performer and studio cards that have a stashid
 // @version     0.1.2
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @grant       unsafeWindow
 // @grant       GM_addStyle
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function () {

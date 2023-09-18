@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        Stash Studio Image And Parent On Create
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Set studio image and parent when creating from StashDB. Requires userscript_functions stash plugin
 // @version     0.3.0
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @grant       unsafeWindow
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function() {

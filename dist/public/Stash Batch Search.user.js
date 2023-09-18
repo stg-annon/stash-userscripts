@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Stash Batch Search
-// @namespace   https://github.com/7dJx1qP/stash-userscripts
+// @namespace   https://github.com/stg-annon/stash-userscripts
 // @description Adds a batch search button to scenes and performers tagger
 // @version     0.4.2
 // @author      7dJx1qP
@@ -8,7 +8,7 @@
 // @grant       unsafeWindow
 // @grant       GM.getValue
 // @grant       GM.setValue
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src\StashUserscriptLibrary.js
 // ==/UserScript==
 
 (function() {

@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Stash Userscripts Bundle
-// @namespace     https://github.com/7dJx1qP/stash-userscripts
+// @namespace     https://github.com/stg-annon/stash-userscripts
 // @description Stash Userscripts Bundle
 // @version     0.21.3
 // @author      7dJx1qP
@@ -15,33 +15,33 @@
 // @require     https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.js
 // @require     https://raw.githubusercontent.com/nodeca/js-yaml/master/dist/js-yaml.js
 // @require     https://cdnjs.cloudflare.com/ajax/libs/marked/4.2.2/marked.min.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src\StashUserscriptLibrary.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src\StashUserscriptLibrary.js
 //
 // **************************************************************************************************
 // *            YOU MAY REMOVE ANY OF THE @require LINES BELOW FOR SCRIPTS YOU DO NOT WANT          *
 // **************************************************************************************************
 //
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Batch Query Edit.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Batch Result Toggle.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Batch Save.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Batch Search.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Markdown.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash New Performer Filter Button.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Open Media Player.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Performer Audit Task Button.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Performer Image Cropper.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Performer Markers Tab.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Performer Tagger Additions.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Performer URL Searchbox.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Scene Tagger Additions.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Scene Tagger Colorizer.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Scene Tagger Draft Submit.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Scene Tagger Linkify.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Set Stashbox Favorite Performers.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash StashID Icon.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash StashID Input.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Stats.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Studio Image And Parent On Create.user.js
-// @require     https://raw.githubusercontent.com/7dJx1qP/stash-userscripts/main/src/body\Stash Tag Image Cropper.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Batch Query Edit.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Batch Result Toggle.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Batch Save.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Batch Search.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Markdown.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash New Performer Filter Button.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Open Media Player.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Performer Audit Task Button.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Performer Image Cropper.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Performer Markers Tab.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Performer Tagger Additions.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Performer URL Searchbox.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Scene Tagger Additions.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Scene Tagger Colorizer.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Scene Tagger Draft Submit.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Scene Tagger Linkify.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Set Stashbox Favorite Performers.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash StashID Icon.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash StashID Input.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Stats.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Studio Image And Parent On Create.user.js
+// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Tag Image Cropper.user.js
 
 // ==/UserScript==
