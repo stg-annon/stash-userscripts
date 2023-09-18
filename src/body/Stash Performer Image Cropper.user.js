@@ -59,7 +59,6 @@
                 cropInfo.style.all = "revert"
                 cropInfo.classList.add('text-white')
 
-                const imageUrl = getElementByXpath("//div[contains(@class, 'detail-header-image')]//img[@class='performer']/@src").nodeValue;
                 const cropStart = document.createElement('button');
                 cropStart.setAttribute("id", "crop-start");
                 cropStart.classList.add('btn', 'btn-primary');
@@ -117,7 +116,7 @@
                     await stash.callGQL(reqData);
                     reloadImg(image.src);
                     cropper.destroy();
-                    cropperModal.close("cropCancel")
+                    cropperModal.close("cropAccept")
                 });
                 cropBtnContainer.appendChild(cropAccept);
                 
