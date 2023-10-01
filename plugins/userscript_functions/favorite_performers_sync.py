@@ -83,7 +83,7 @@ def get_stash_favorite_performers(stash: StashInterface, endpoint):
             if p["favorite"]:
                 stash_ids.append(sid["stash_id"])
             if sid["stash_id"] in performer_count:
-                log.warning(f'multiple performers with StashID {sid["stash_id"]} {p["name"]} {stash_ids[sid["stash_id"]]["name"]}')
+                log.warning(f'multiple performers with StashID {sid["stash_id"]} {p["name"]}')
                 performer_count[sid["stash_id"]] += 1
             else:
                 performer_count[sid["stash_id"]] = 1
