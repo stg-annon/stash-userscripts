@@ -18,8 +18,6 @@ except ModuleNotFoundError:
 json_input = json.loads(sys.stdin.read())
 name = json_input['args']['name']
 
-log.info(json_input['args']['endpoint'])
-
 stash = StashInterface(json_input["server_connection"])
 sbox = StashBoxInterface(stash.get_stashbox_connection("stashdb.org"))
 
