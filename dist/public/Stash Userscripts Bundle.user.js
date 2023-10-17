@@ -2,7 +2,7 @@
 // @name        Stash Userscripts Bundle
 // @namespace     https://github.com/stg-annon/stash-userscripts
 // @description Stash Userscripts Bundle
-// @version     0.21.3
+// @version     0.21.4
 // @author      7dJx1qP
 // @match       http://localhost:9999/*
 // @resource    IMPORTED_CSS https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.css
@@ -41,7 +41,6 @@
 // @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash StashID Icon.user.js
 // @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash StashID Input.user.js
 // @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Stats.user.js
-// @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Studio Image And Parent On Create.user.js
 // @require     https://raw.githubusercontent.com/stg-annon/stash-userscripts/main/src/body\Stash Tag Image Cropper.user.js
 
 // ==/UserScript==

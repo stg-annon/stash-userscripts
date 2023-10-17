@@ -94,11 +94,11 @@
         }
     }
 
-    stash.addEventListener('page:studio:scenes', function () {
+    stash.addEventListener('page:studio', function () {
         waitForElementByXpath("//button[contains(@class, 'btn-primary') and text()='Scrape by fragment']", initDraftButtons);
     });
 
-    stash.addEventListener('page:performer:scenes', function () {
+    stash.addEventListener('page:performer', function () {
         waitForElementByXpath("//button[contains(@class, 'btn-primary') and text()='Scrape by fragment']", initDraftButtons);
     });
 
