@@ -7,7 +7,7 @@ try:
     from stashapi.stashapp import StashInterface
     from stashapi.stashbox import StashBoxInterface
 except ModuleNotFoundError:
-    print("If you have pip (normally installed with python), run this command in a terminal (cmd): pip install stashapp-tools)", file=sys.stderr)
+    print("If you have pip (normally installed with python), run this command in a terminal (cmd): 'pip install stashapp-tools'", file=sys.stderr)
     sys.exit()
 
 def get_stashbox_performer_favorite(sbox:StashBoxInterface, stash_id):
