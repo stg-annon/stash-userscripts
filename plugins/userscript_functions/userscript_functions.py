@@ -12,7 +12,7 @@ try:
     from stashapi.stashapp import StashInterface
     from stashapi.stashbox import StashBoxInterface
 except ModuleNotFoundError:
-    print("If you have pip (normally installed with python), run this command in a terminal (cmd): pip install pystashlib)", file=sys.stderr)
+    print("If you have pip (normally installed with python), run this command in a terminal (cmd): 'pip install stashapp-tools'", file=sys.stderr)
     sys.exit()
 
 json_input = json.loads(sys.stdin.read())

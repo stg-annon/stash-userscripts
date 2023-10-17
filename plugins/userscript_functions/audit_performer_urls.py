@@ -7,7 +7,7 @@ try:
     import stashapi.log as log
     from stashapi.stashapp import StashInterface
 except ModuleNotFoundError:
-    print("If you have pip (normally installed with python), run this command in a terminal (cmd): pip install pystashlib)", file=sys.stderr)
+    print("If you have pip (normally installed with python), run this command in a terminal (cmd): 'pip install stashapp-tools'", file=sys.stderr)
     sys.exit()
 
 def to_iafd_fragment(url):
