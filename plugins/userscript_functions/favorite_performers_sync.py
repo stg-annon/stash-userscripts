@@ -24,7 +24,7 @@ query FullPerformer($id: ID!) {
         "id": stash_id
     }
 
-    return sbox.callGQL(query, variables)
+    return sbox.call_gql(query, variables)
 
 def update_stashbox_performer_favorite(sbox:StashBoxInterface, stash_id, favorite):
     query = """
@@ -38,7 +38,7 @@ mutation FavoritePerformer($id: ID!, $favorite: Boolean!) {
         "favorite": favorite
     }
 
-    return sbox.callGQL(query, variables)
+    return sbox.call_gql(query, variables)
 
 def get_favorite_performers_from_stashbox(sbox:StashBoxInterface):
     query = """

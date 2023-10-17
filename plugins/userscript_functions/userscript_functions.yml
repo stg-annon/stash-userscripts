@@ -1,6 +1,6 @@
 name: Userscript Functions
 description: Tasks for userscripts
-url: https://github.com/7dJx1qP/stash-userscripts
+url: https://github.com/stg-annon/stash-userscripts
 version: 0.5.4
 exec:
   - python
