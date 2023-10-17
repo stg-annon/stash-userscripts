@@ -165,9 +165,9 @@ This additional stash plugin is required by some userscripts for their functiona
 
 ### Installation
 
-Copy the whole folder [`userscript_functions`](https://github.com/7dJx1qP/stash-userscripts/tree/master/plugins/userscript_functions) to your stash `plugins` folder.
+Copy the whole folder [`userscript_functions`](plugins/userscript_functions) to your stash `plugins` folder.
 
-`pip install requests pystashlib`
+`pip install requests stashapp-tools`
 
 Plugin settings can be updated from within the Stash settings under the System tab. The stash url and api key settings are automatically set for you when the system settings page is loaded.
 
