@@ -161,7 +161,7 @@ This additional stash plugin is required by some userscripts for their functiona
 
 * Python 3.9+
 * Requests (https://pypi.org/project/requests/)
-* PyStashLib (https://pypi.org/project/pystashlib/)
+* stashapp-tools (https://pypi.org/project/stashapp-tools/)
 
 ### Installation
 
