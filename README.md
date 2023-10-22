@@ -32,6 +32,7 @@ Pick and choose which userscript to install in the table below or install just `
 | Stash Scene Tagger Colorizer  | In Scene Tagger, colorize scrape results. Matching fields are green, missing fields are yellow, and mismatching fields are red  |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20Scene%20Tagger%20Colorizer.user.js?raw=1)  |
 | Stash Scene Tagger Draft Submit  | Adds button to Scene Tagger to submit draft to stashdb |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20Scene%20Tagger%20Draft%20Submit.user.js?raw=1)  |
 | Stash Scene Tagger Linkify  | Turn all scene tagger result text referencing stash or stashbox studio and performer names into clickable links |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20Scene%20Tagger%20Linkify.user.js?raw=1)  |
+| Stash Scene Thumbnail Cropper  |  Adds ability to crop scene thumbnail from scene page  |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20Scene%20Thumbnail%20Cropper.user.js?raw=1)  |
 | Stash Set Stashbox Favorite Performers  | Sync Stashbox favorite performers whenever a stash performer is favorited or unfavorited. Also adds button to performers page to sync all |:heavy_check_mark:|  [INSTALL USERSCRIPT](dist/public/Stash%20Set%20Stashbox%20Favorite%20Performers.user.js?raw=1)  |
 | Stash StashID Icon  | Adds checkmark icon to performer and studio cards that have a stashid |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20StashID%20Icon.user.js?raw=1)  |
 | Stash StashID Input  | Adds input textboxes to performer detail and studio detail pages for stashid entry. Also displays studio stashids on studio page without having to click edit to view |:x:|  [INSTALL USERSCRIPT](dist/public/Stash%20StashID%20Input.user.js?raw=1)  |
@@ -118,6 +119,10 @@ Pick and choose which userscript to install in the table below or install just `
 ![Config](images/Stash%20Scene%20Tagger%20Linkify/config.png?raw=true "Config")
 
 ![Scenes tagger](images/Stash%20Scene%20Tagger%20Linkify/scenes-tagger.png?raw=true "Scenes tagger")
+
+## Stash Scene Thumbnail Cropper
+
+![Cropper](images/Stash%20Scene%20Thumbnail%20Cropper/Stash_Scene_Thumbnail_Cropper.png?raw=true "Cropper")
 
 ## Stash Set Stashbox Favorite Performers
 
