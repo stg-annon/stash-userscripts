@@ -2,7 +2,7 @@
 // @name        Stash Scene Thumbnail Cropper
 // @namespace   %NAMESPACE%
 // @description Adds an image cropper to scene page
-// @version     0.1.0
+// @version     0.1.1
 // @author      scruffynerf
 // @match       %MATCHURL%
 // @resource    IMPORTED_CSS https://raw.githubusercontent.com/fengyuanchen/cropperjs/main/dist/cropper.min.css
